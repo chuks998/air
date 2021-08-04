@@ -1,0 +1,405 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Courier|homePage</title>
+</head>
+<body>
+    <header>
+        <div>
+            <p>air courier service</p>
+            <i>bringing the world closer to you...</i>
+        </div>
+
+        <nav>
+            <ul class="ul">
+                <li><a href="#about_us">about us</a></li>
+                <li><a href="#remarks">rating and remarks</a></li>
+                <li><a href="#">contact us</a>
+                    <ul>
+                        <li><a href="tel:+234">call customer care</a></li>
+                        <li><a href="mailto:yourmail">send us a mail</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="body-div">
+        <form action="{% url 'result' %}" method="get">
+            <input type="text" name="q" placeholder="enter tracking number">
+            <button type="submit">track</button>
+        </form>
+    </div>
+    <section class="body-section">
+        <div>
+            <h1>gaining trust globally</h1>
+            <p>we have gained trust in over 1 million homes worldwide and even more to gain.</p>
+        </div>
+    </section>
+    <section class="body-section">
+        <div class="second">
+            <h2>timing and delivery</h2>
+            <p>we work round the clock to ensure rapid and accurrate delivery. we have 6 working days which ensure almost 100% movement and securing your itmes.</p>
+        </div>
+    </section>
+    <section class="about" id="about_us">
+        <strong>about air courier service</strong>
+        <p>Air Courier service is a young fast, growing shipping service founded in 2019. <br>
+            we operate globally and have few centers around the world. <br>
+            according to our slogan, we try our best to take or deliver your package to anywhere in the world. <br>
+            copyright &copy; air courier service
+        </p>
+    </section>
+
+    <section class="typer-box" id="remarks">
+        <strong>remarks and comments</strong>
+        <p class="typer" id="main" data-words="my name is melinda. i tried acs and i don't regret it,
+        i am john. i got my mail 5days to my delivery date.,
+        i am damish. my niece recived the gift i got her for ramadan." data-delay="50" data-deleteDelay="5000"></p>
+    </section>
+
+
+    <script src="/static/typer.js"></script>
+</body>
+<footer>
+    <section>
+        <strong>contact options</strong>
+        <ul>
+            <li><a href="tel:+234">call customer care</a></li>
+            <li><a href="mailto:yourmail">send us a mail</a></li>
+        </ul>
+    </section>
+
+</footer>
+</html>
+<!-- CSS -->
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: #555;
+        transition: ease-in-out 1s;
+    }
+    /* testing */
+    
+    
+    body{
+        background-color: #f5f5f5;
+    }
+    header{
+        background-color: #f5f5f5;
+        position: sticky;
+        top: 0;
+        width: 95vw;
+        height: fit-content;
+        padding: 5px;
+        margin-bottom: 20px;
+        z-index: 9999;
+    }
+    header div{
+        width: 95vw;
+        height: fit-content;
+        padding: 2px;
+        background:linear-gradient(to right, yellow, #f9f9f9);
+        border-radius: 3px;
+        box-shadow: 1px 1px 7px;
+    }
+    header div p{
+        font-size: 150%;
+        color: #f9f9f9;
+        text-shadow: #8b8b8b 1px 1px 4px;
+        font-weight: 500;
+    }
+    @keyframes typing{
+        from
+        {width: 0;}
+        to
+        {width: 100%;}
+    }
+    header div i{
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: typing 2s 2s linear;
+        font-size: 70%;
+        color: red;
+    }
+    
+    nav{
+        width: 100%;
+        height: 50px;
+        padding: 2px;
+        background-color: #f9f9f9;
+        margin-top: 10px;
+        box-shadow: 1px 1px 7px;
+        z-index: 9998;
+        margin-left: 0;
+        position: relative;
+    }
+    nav .ul{
+        float: left;
+        margin-top: 5px;
+        position: absolute;
+        width: 100%;
+    }
+    nav .ul li{
+        list-style: none;
+        float: left;
+        position: relative;
+        padding-left: 2px;
+    }
+    nav .ul li a{
+        display: block;
+        font-size: 110%;
+        color: #777;
+        font-weight: 200;
+        margin-right: 20px;
+    }
+    nav .ul li ul{
+        display: none;
+        position: absolute;
+        border-radius: 0 0 4px 4px;
+        background: linear-gradient(#f5f5f5,#ffff8b);
+        width: 138%;
+    }
+    nav .ul li ul li{
+        width: 100%;
+        padding-left: 2px;
+    }
+    nav .ul li ul li a{
+        font-size: 90%;
+        margin: 5px 0;
+        color: #ff5252;
+    }
+    nav .ul li ul li a:hover{
+        background-color: #f5f5f5;
+    }
+    nav .ul li:hover ul{
+        display: block;
+    }
+    .body-div{
+        width: 100%;
+        height: fit-content;
+        margin-top: 35px;
+    }
+    .body-div form input{
+        width: 70%;
+        height: 25px;
+        padding-left: 5px;
+        margin-left: 2px;
+        color: #777;
+    }
+    .body-div form button{
+        width: 20%;
+        height: 25px;
+        background-color: #f5f5f5;
+        color: #777;
+        border: none;
+        font-size: 110%;
+        font-weight: 200;
+    }
+    footer{
+        position: relative;
+        bottom: 0%;
+        background-color: black;
+        width: 100%;
+        height: 100px;
+    }
+    footer section{
+        margin: 2px 5px;
+        float: left;
+    }
+    footer section strong{
+        font-size: 150%;
+        color: #f5f5f5;
+        font-weight: 200;
+        padding-bottom: 5px;
+    }
+    footer section ul{
+        margin-top: 10px;
+    }
+    footer section a{
+        color: yellow;
+        font-weight: 200;
+    }
+    .body-section{
+        margin-top: 20px;
+        width: 98vw;
+        height: fit-content;
+    }
+    @keyframes div{
+        from
+        {margin-left: -100%;}
+        to 
+        {margin-left: 2px;}
+    }
+    .body-section div{
+        background: linear-gradient(#77777780, #77777780), url(/static/photo/air\ \(1\).jpg);
+        background-position: center;
+        background-size: cover;
+        width: 98%;
+        margin-left: 2px;
+        height: fit-content;
+        border-radius: 5px;
+        padding-top: 40px;
+        transition: steps(3) 1s;
+        animation: div 3s 1s;
+        
+    }
+    .body-section .second{
+        background: linear-gradient(#77777780, #77777780), url(/static/photo/air\ \(2\).jpg);
+        background-position: center;
+        background-size: cover;
+        width: 98%;
+        margin-left: 2px;
+        height: fit-content;
+        border-radius: 5px;
+        padding-top: 40px;
+        transition: ease-in-out 1s;
+    }
+    .body-section div h1{
+        color: #f5f5f5;
+        font-size: 220%;
+        text-align: center;
+        font-weight: 200;
+        letter-spacing: 2px;
+    }
+    @keyframes p {
+        0%
+        {font-size: 80%;}
+        25%
+        {font-size: 90%;}
+        50%
+        {font-size: 100%;}
+        70%
+        {font-size: 120%;}
+        100%
+        {font-size: 200%;}
+    }
+    .body-section div p{
+        margin-top: 20px;
+        color: yellow;
+        font-size: 170%;
+        text-align: center;
+        font-weight: 200;
+        line-height: 150%;
+        animation: p 4s 2s;
+    }
+    @keyframes h2{
+        from
+        {color: yellow;}
+        to
+        {color: red;}
+    }
+    .body-section .second h2{
+        font-size: 250%;
+        text-align: center;
+        font-weight: 200;
+        letter-spacing: 2px;
+        animation: h2 4s 2s infinite;
+    }
+    
+    .body-section .second p{
+        margin-top: 20px;
+        color: #f9f9f9;
+        font-weight: 200;
+        overflow: hidden;
+        text-align: center;
+        line-height: 150%;
+        transition: ease-in-out 2s;
+        animation: p 4s 2s;
+    }
+    .about{
+        margin-left: 2px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 2px;
+        border-top: 1px solid red;
+        border-bottom: 1px solid red;
+        box-shadow: 3px 3px 5px;
+    }
+    @keyframes strong{
+        from
+        {color: red;}
+        to
+        {color: green;}
+
+    }
+    .about strong{
+        font-size: 150%;
+        animation: strong 2s infinite;
+        position: relative;
+    }
+    .about p{
+        margin-top: 10px;
+    }
+    .typer-box{
+        margin-left: 2px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 10px 2;
+        border-top: 1px solid red;
+        border-bottom: 1px solid red;
+        box-shadow: 3px 3px 5px;
+    }
+    @media only screen and (min-width: 768px){
+        header div p{
+        font-size: 300%;
+        }
+        header div i{
+        font-size: 110%;
+        }
+        nav .ul li a{
+        font-size: 200%;
+        margin-right: 50px;
+        }
+        nav .ul li ul li a{
+        font-size: 150%;
+        }
+        .body-div form input{
+        width: 60%;
+        height: 30px;
+        }
+    .body-div form button{
+        width: 30%;
+        height: 30px;
+        font-size: 150%;
+        }
+        .body-section div{
+        height: 300px;
+        
+        }
+    .body-section .second{
+        height: 300px;
+        }
+        .body-section div h1{
+        color: #f5f5f5;
+        font-size: 300%;
+        letter-spacing: 1px;
+        }
+    .about strong{
+        font-size: 300%;
+        }
+    .about p{
+        margin-top: 10px;
+        font-size: 150%;
+        }
+        .typer-box{
+            padding: 5px 2px;
+        }
+        .typer-box strong{
+            font-size: 300%;
+        }
+        .typer-box p{
+        font-size: 150%;
+        margin-top: 10px;
+        }
+    }
+</style>
